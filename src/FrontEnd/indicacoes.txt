@@ -1,0 +1,124 @@
+Neste exemplo, utilizamos a biblioteca react-hook-form para facilitar o gerenciamento do formulário e a validação dos campos. Também utilizamos o yup para criar um esquema de validação com as regras de campo obrigatório.
+
+No componente Login, criamos um estado loginError para armazenar uma mensagem de erro caso as credenciais de login sejam inválidas. No método onSubmit, realizamos a validação dos campos utilizando o schema definido anteriormente. Se os campos forem válidos, você pode implementar a lógica de autenticação adequada.
+
+Lembre-se de adicionar as rotas no arquivo pages/index.js para acessar a página de login:
+
+
+
+
+----------------------------- outro pagina
+
+Primeiro, vamos criar uma pasta para o projeto e iniciar um novo projeto Next.js:
+
+npx create-next-app nome-do-projeto
+cd nome-do-projeto
+
+1- Crie um arquivo components/Layout.js para o layout da página:
+import React from 'react';
+import Link from 'next/link';
+
+const Layout = ({ children }) => {
+  return (
+    <div>
+      <nav>
+        <ul>
+          <li>
+            <Link href="/cursos">
+              <a>Cursos</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/professores">
+              <a>Professores</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/formularios">
+              <a>Formulários</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/modulos">
+              <a>Módulos</a>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+      <main>{children}</main>
+    </div>
+  );
+};
+
+export default Layout;
+
+2- Crie um arquivo pages/index.js para a página inicial:
+import Layout from '../components/Layout';
+
+const Home = () => {
+  return (
+    <Layout>
+      <h1>Página Inicial</h1>
+    </Layout>
+  );
+};
+
+export default Home;
+
+3- Crie arquivos para os menus de "Cursos", "Professores", "Formulários" e "Módulos" dentro da pasta pages:
+pages/cursos.js:
+
+import Layout from '../components/Layout';
+
+const Cursos = () => {
+  return (
+    <Layout>
+      <h1>Cursos</h1>
+    </Layout>
+  );
+};
+
+export default Cursos;
+
+pages/professores.js:
+
+import Layout from '../components/Layout';
+
+const Professores = () => {
+  return (
+    <Layout>
+      <h1>Professores</h1>
+    </Layout>
+  );
+};
+
+export default Professores;
+
+pages/formularios.js:
+
+import Layout from '../components/Layout';
+
+const Formularios = () => {
+  return (
+    <Layout>
+      <h1>Formulários</h1>
+    </Layout>
+  );
+};
+
+export default Formularios;
+
+
+
+Agora, você pode executar o projeto com o comando npm run dev e acessar a página inicial em http://localhost:3000.
+
+Os menus "Cursos", "Professores", "Formulários" e "Módulos" estarão disponíveis na barra de navegação no topo da página. Ao clicar em cada um dos menus, você será redirecionado para a página correspondente com o título adequado.
+
+Você pode personalizar o layout, estilos e adicionar conteúdo adicional conforme suas necessidades.
+
+
+
+
+
+
+
